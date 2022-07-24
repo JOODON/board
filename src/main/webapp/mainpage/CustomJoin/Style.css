@@ -1,0 +1,77 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(168, 99, 204, 0.53);
+    background-size: cover;
+    color: black;
+}
+
+.login-form{
+    position: relative; z-index: 2;
+}
+.login-form h1{
+    font-size: 40px; color: #000000;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.int-area{ width: 400px; position: relative}
+.int-area input{
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 18px; color: #f3f3f3;
+    outline: none;
+    margin-top: 5px;
+}
+.int-area label{
+    position: absolute; left: 10px; top: 15px;
+    font-size: 18px; color: #687b9b;
+    transition: all .5s ease;
+}
+.int-area label.warning{
+    color: red !important;
+    animation:warning .3s ease;
+    animation-iteration-count: 3;
+}
+@keyframes warning {
+    0%{transform: translateX(-8px)}
+    25%{transform: translateX(8px)}
+    50%{transform: translateX(-8px)}
+    75%{transform: translateX(8px)}
+}
+.int-area input:focus +label,
+.int-area input:valid +label{
+    top:-2px;
+    font-size: 13px;
+    color: #166cea;
+}
+
+.btn-area{ margin-top:20px }
+
+.btn-area button {
+    width: 100%;
+    background-color: #166cea;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    color: #ffffff;
+    border-radius:25px;
+}
+
+.caption{
+    margin-top: 20px;
+    text-align: center;
+}
+.caption a {
+    font-size: 15px; color: #fffdfd;
+    text-decoration: none;
+}

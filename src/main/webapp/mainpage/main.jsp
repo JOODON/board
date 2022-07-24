@@ -28,6 +28,7 @@
     <a href="#" class="Search"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
     <a href="#" class="Contact"><i class="fa-regular fa-address-book"></i> Contact</a>
     <a href="loginpage/login.jsp" class="login"><i class="fa-regular fa-user"></i> login</a>
+    <a href="CustomJoin/Join.jsp" class="login"> <i class="fa-regular fa-user"></i> Custom Join</a>
 </div>
 
 <div class="main-page">
