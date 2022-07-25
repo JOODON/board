@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import="bbs.BBSDAO" %>
+<%@ page import="bbs.BBS"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +26,10 @@
     String userID=null;
     if (session.getAttribute("userID")!= null){
         userID=(String) session.getAttribute("userID");
+    }
+    int pageNumber=1;
+    if(request.getParameter("pageNumber") != null ){
+        pageNumber=Integer.parseInt(request.getParameter("pageNumber"));
     }
 %>
 <div class="header">
@@ -58,19 +66,45 @@
             </tr>
             </thead>
             <tbody>
+            <%
+                BBSDAO bbsdao=new BBSDAO();
+                ArrayList<BBS> list =bbsdao.getList(pageNumber);
+                for (int i=0; i< list.size(); i++){
+
+            %>
             <tr>
-                <td>1</td>
-                <td>안녕하세요</td>
-                <td>주동호</td>
-                <td>2022.07.25</td>
+                <td><%= list.get(i).getBbsID() %></td>
+                <td><a style="color: #000000; text-decoration: none;" href="view.jsp?bbsID=<%= list.get(i).getBbsID()%>"> <%= list.get(i).getBbsTitle().replaceAll(" ", " &nbsp").replaceAll("<", " &lt;").replaceAll("<", " &gt;").replaceAll("\n", "</br>")%></td>
+                <td><%=list.get(i).getUserID()%></td>
+                <td><%= list.get(i).getBbsDate().substring(0,11)+ list.get(i).getBbsDate().substring(11,13)+"시" + list.get(i).getBbsDate().substring(14,16)+ "분" %></td>
             </tr>
+            <%
+                }
+            %>
             </tbody>
         </table>
+        <div class="page-bt">
+        <%
+            if (pageNumber !=1){
+
+        %>
+        <a style="color: #000000; text-decoration: none;" href="View.jsp?pageNumber=<%= pageNumber - 1 %>" class="btn-left"> <p> 이전 </p></a>
+        <%
+            }if (bbsdao.nextPage(pageNumber+1)){
+        %>
+        <a style="color: #000000; text-decoration: none;" href="View.jsp?pageNumber=<%= pageNumber + 1 %>"class="btn-right"> <p> 다음 </p> </a>
+        <%
+            }if(userID != null){
+
+        %>
+        </div>
         <div class="write_bt">
             <button><a href="http://localhost:8080/Portfolio/mainpage/Write/Write.jsp"class="btn">글쓰기</a></button>
         </div>
     </div>
 </div>
-
+<%
+    }
+%>
 </body>
 </html>

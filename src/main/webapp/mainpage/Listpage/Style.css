@@ -66,3 +66,9 @@ button{
     display: flex;
     justify-content: right;
 }
+.page-bt {
+    color: black;
+    display: flex;
+    justify-content:space-between;
+    margin-top: 40px;
+}
