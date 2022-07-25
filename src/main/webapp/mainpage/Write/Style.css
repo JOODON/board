@@ -1,5 +1,5 @@
 body{
-    background: rgba(168, 99, 204, 0.53);
+    background: rgba(224, 200, 236, 0.53);
 
 }
 .header{
@@ -27,7 +27,7 @@ header{
 .container{
     background: #f5e6f4;
     width: 60%;
-    height: 90%;
+    height: 130%;
     margin: auto;
     margin-top: 100px;
 }

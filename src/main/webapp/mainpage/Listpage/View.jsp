@@ -58,7 +58,7 @@
     <div class="row">
         <table border="1px">
             <thead>
-            <tr>
+            <tr style="height:50px">
                 <th>번호</th>
                 <th>제목</th>
                 <th>작성자</th>
@@ -72,9 +72,9 @@
                 for (int i=0; i< list.size(); i++){
 
             %>
-            <tr>
+            <tr style="height:50px">
                 <td><%= list.get(i).getBbsID() %></td>
-                <td><a style="color: #000000; text-decoration: none;" href="view.jsp?bbsID=<%= list.get(i).getBbsID()%>"> <%= list.get(i).getBbsTitle().replaceAll(" ", " &nbsp").replaceAll("<", " &lt;").replaceAll("<", " &gt;").replaceAll("\n", "</br>")%></td>
+                <td><a style="color: #000000; text-decoration: none;" href="http://localhost:8080/Portfolio/mainpage/view/View.jsp?bbsID=<%= list.get(i).getBbsID()%>" > <%= list.get(i).getBbsTitle().replaceAll(" ", " &nbsp").replaceAll("<", " &lt;").replaceAll("<", " &gt;").replaceAll("\n", "</br>")%> </td>
                 <td><%=list.get(i).getUserID()%></td>
                 <td><%= list.get(i).getBbsDate().substring(0,11)+ list.get(i).getBbsDate().substring(11,13)+"시" + list.get(i).getBbsDate().substring(14,16)+ "분" %></td>
             </tr>

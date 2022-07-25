@@ -8,7 +8,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgba(168, 99, 204, 0.53);
+    background: rgba(224, 200, 236, 0.53);
     background-size: cover;
 }
 
@@ -27,12 +27,12 @@ body{
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #e1e1e1;
-    font-size: 18px; color: #ffffff;
+    font-size: 18px; color: #000000;
     outline: none;
 }
 .int-area label{
     position: absolute; left: 10px; top: 15px;
-    font-size: 18px; color: #e1e3f5;
+    font-size: 18px; color: #030303;
     transition: all .5s ease;
 }
 .int-area label.warning{
@@ -70,6 +70,6 @@ body{
     text-align: center;
 }
 .caption a {
-    font-size: 15px; color: #fffefe;
+    font-size: 15px; color: #111111;
     text-decoration: none;
 }
