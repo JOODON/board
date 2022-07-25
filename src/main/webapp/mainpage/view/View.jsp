@@ -39,14 +39,14 @@
 %>
 
 <div class="header">
-    <a href="#" class="main"><i class="fa-solid fa-house-chimney"></i> Home</a>
+    <a href="http://localhost:8080/Portfolio/mainpage/main.jsp" class="main"><i class="fa-solid fa-house-chimney"></i> Home</a>
     <a href="#" class="Search"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
-    <a href="#" class="Contact"><i class="fa-regular fa-address-book"></i> Contact</a>
+    <a href="http://localhost:8080/Portfolio/mainpage/Listpage/View.jsp" class="Contact"><i class="fa-regular fa-address-book"></i> Contact</a>
     <%
         if(userID == null){
 
     %>
-    <a href="#" class="login"><i class="fa-regular fa-user"></i> login</a>
+    <a href="http://localhost:8080/Portfolio/mainpage/loginpage/login.jsp" class="login"><i class="fa-regular fa-user"></i> login</a>
     <%
     }else{
 
@@ -56,7 +56,7 @@
     <%
         }
     %>
-    <a href="#" class="login"> <i class="fa-regular fa-user"></i> Custom Join</a>
+    <a href="http://localhost:8080/Portfolio/mainpage/CustomJoin/Join.jsp" class="login"> <i class="fa-regular fa-user"></i> Custom Join</a>
 </div>
 <header>
     <h1>게시판 글보기</h1>
@@ -86,7 +86,7 @@
             if( userID !=null && userID.equals(bbs.getUserID())){
         %>
         <button class="bt2"><a style="text-decoration: none; color: white" href="update.jsp?bbsID=<%= bbsID %>" >수정</a></button>
-        <button class="bt3">삭제</button>
+        <button class="bt3"><a  style="text-decoration: none; color: white" onclick="return confirm(`정말로 삭제하시겠습니까?`)"href="deleteAction.jsp?bbsID=<%= bbsID %>" >삭제</a></button>
         <%
             }
         %>

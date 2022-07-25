@@ -30,7 +30,7 @@
     }
 %>
 <div class="header">
-    <a href="#" class="main"><i class="fa-solid fa-house-chimney"></i> Home</a>
+    <a href="http://localhost:8080/Portfolio/mainpage/main.jsp" class="main"><i class="fa-solid fa-house-chimney"></i> Home</a>
     <a href="#" class="Search"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
     <a href="Listpage/View.jsp" class="Contact"><i class="fa-regular fa-address-book"></i> Contact</a>
     <%

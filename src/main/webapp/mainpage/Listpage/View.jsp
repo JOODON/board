@@ -33,9 +33,9 @@
     }
 %>
 <div class="header">
-    <a href="#" class="main"><i class="fa-solid fa-house-chimney"></i> Home</a>
+    <a href="http://localhost:8080/Portfolio/mainpage/main.jsp" class="main"><i class="fa-solid fa-house-chimney"></i> Home</a>
     <a href="#" class="Search"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
-    <a href="#" class="Contact"><i class="fa-regular fa-address-book"></i> Contact</a>
+    <a href="http://localhost:8080/Portfolio/mainpage/Listpage/View.jsp" class="Contact"><i class="fa-regular fa-address-book"></i> Contact</a>
     <%
         if(userID == null){
 
@@ -50,7 +50,7 @@
     <%
         }
     %>
-    <a href="#" class="login"> <i class="fa-regular fa-user"></i> Custom Join</a>
+    <a href="http://localhost:8080/Portfolio/mainpage/CustomJoin/Join.jsp" class="login"> <i class="fa-regular fa-user"></i> Custom Join</a>
 </div>
 
 <h1>게시판 글 목록</h1>
