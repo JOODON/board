@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.io.PrintWriter"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,12 +23,30 @@
     <title>메인페이지</title>
 </head>
 <body>
-
+<%
+    String userID=null;
+    if (session.getAttribute("userID")!= null){
+        userID=(String) session.getAttribute("userID");
+    }
+%>
 <div class="header">
     <a href="#" class="main"><i class="fa-solid fa-house-chimney"></i> Home</a>
     <a href="#" class="Search"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
-    <a href="#" class="Contact"><i class="fa-regular fa-address-book"></i> Contact</a>
-    <a href="loginpage/login.jsp" class="login"><i class="fa-regular fa-user"></i> login</a>
+    <a href="Listpage/View.jsp" class="Contact"><i class="fa-regular fa-address-book"></i> Contact</a>
+    <%
+        if(userID == null){
+
+    %>
+    <a href="loginpage/login.jsp" class="login"><i class="fa-regular fa-user"></i> Login</a>
+    <%
+    }else{
+
+
+    %>
+    <a href="loginpage/logoutAction.jsp" class="login"><i class="fa-regular fa-user"></i> LoginOut</a>
+    <%
+        }
+    %>
     <a href="CustomJoin/Join.jsp" class="login"> <i class="fa-regular fa-user"></i> Custom Join</a>
 </div>
 
