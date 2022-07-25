@@ -2,21 +2,21 @@
   Created by IntelliJ IDEA.
   User: launc
   Date: 2022-07-25
-  Time: 오전 11:21
+  Time: 오후 12:17
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>게시글 목록</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
-    <link href="Style.css" rel="stylesheet">
+    <title>게시판 글쓰기</title>
+    <meta http-equiv="Content-Type" contant="text/html"; charset="UTF-8">
+    <meta name="viewport" content="width=device-width",initial-scale="1">
     <script src="https://kit.fontawesome.com/f696815b8c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Style.css">
 </head>
+<style>
+
+</style>
 <body>
 <%
     String userID=null;
@@ -45,32 +45,22 @@
     <a href="#" class="login"> <i class="fa-regular fa-user"></i> Custom Join</a>
 </div>
 
-<h1>게시판 글 목록</h1>
 <div class="container">
-    <div class="row">
-        <table border="1px">
-            <thead>
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>작성일</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>안녕하세요</td>
-                <td>주동호</td>
-                <td>2022.07.25</td>
-            </tr>
-            </tbody>
-        </table>
-        <div class="write_bt">
-            <button><a href="http://localhost:8080/Portfolio/mainpage/Write/Write.jsp"class="btn">글쓰기</a></button>
+    <header>
+        <h1>게시판 글쓰기 양식</h1>
+    </header>
+    <form action="WriteAction.jsp">
+        <div class="title">
+            <input type="text" name="bbsTitle" class="texthead" placeholder="글 제목">
         </div>
-    </div>
+        <div class="text">
+            <textarea type="text" name="bbsContent" class="textbody" placeholder="글 내용"></textarea>
+        </div>
+        <div class="bt">
+            <button class="buttom" type="submit">글쓰기</button>
+        </div>
+    </form>
 </div>
-
 </body>
 </html>
+
