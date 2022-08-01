@@ -41,6 +41,7 @@ public class userDAO {
         }
         return -2;
     }
+
     public int join(user user){
         String SQL="INSERT INTO USER VALUES(?,?,?,?,?) ";
         try {
