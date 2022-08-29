@@ -7,6 +7,15 @@ public class user {
     private String userGender;
     private String userEmail;
 
+    public user(String userID, String userPassward, String userName, String userGender, String userEmail) {
+        super();
+        this.userID = userID;
+        this.userPassword = userPassword;
+        this.userName = userName;
+        this.userGender = userGender;
+        this.userEmail = userEmail;
+    }
+
     public String getUserID() {
         return userID;
     }

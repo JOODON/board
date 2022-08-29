@@ -5,12 +5,6 @@
 <%@ page import="bbs.BBS" %>
 <% request.setCharacterEncoding("UTF-8");%>
 
-
-<html>
-<head>
-  <title>글 수정</title>
-</head>
-<body>
 <%
   String userID=null;
   if (session.getAttribute("userID")!=null){
@@ -60,5 +54,4 @@
     }
   }
 %>
-</body>
-</html>
+

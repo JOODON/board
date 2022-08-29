@@ -1,9 +1,13 @@
 package USER;
 
+import com.mysql.jdbc.Driver;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class userDAO {
     private Connection conn;
@@ -15,7 +19,6 @@ public class userDAO {
             String dburl="jdbc:mysql://localhost:3307/bbs";
             String dbID="root";
             String dbpassword="kkjjss103@";
-            Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection(dburl,dbID,dbpassword);
         }catch (Exception e){
             e.printStackTrace();
@@ -56,6 +59,30 @@ public class userDAO {
             e.printStackTrace();
         }
         return -1;
+    }
+    public List<user> getUser(){
+        List<user> list=new ArrayList<>();
+        String sql = "SELECT userID,userPassward,userName,userGender,userEmail FROM user order by userID desc";
+        try {
+            String dburl="jdbc:mysql://localhost:3307/bbs";
+            String dbID="root";
+            String dbpassword="kkjjss103@";
+            Connection conn = DriverManager.getConnection(dburl, dbID, dbpassword);
+            PreparedStatement ps=conn.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            while (rs.next()){
+                String userID=rs.getString(1);
+                String userPassward= rs.getString(2);
+                String userName=rs.getString(3);
+                String userGender=rs.getString(4);
+                String userEmail=rs.getString(5);
+                user user=new user(userID,userPassward,userName,userGender,userEmail);
+                list.add(user);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
     }
 }
 

@@ -28,6 +28,7 @@
         userID=(String) session.getAttribute("userID");
     }
     int pageNumber=1;
+
     if(request.getParameter("pageNumber") != null ){
         pageNumber=Integer.parseInt(request.getParameter("pageNumber"));
     }
